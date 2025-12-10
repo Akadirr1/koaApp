@@ -36,7 +36,8 @@ const KullaniciGiris = async (girisBilgisi) => {
         token: Token,
         user: {
             Name: user.Name,
-            SurName: user.SurName
+            SurName: user.SurName,
+            id: user._id
         }
     }
 }
