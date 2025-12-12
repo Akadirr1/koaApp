@@ -1,7 +1,9 @@
-
+const UserRepository= require('../repository/UserRepository')
 const AdminMW = async (ctx, next) => {
 	try {
-		const user = ctx.state.user
+		const tempUser = ctx.state.user
+        const user = await UserRepository.KullaniciBul(tempUser.id)
+        console.log(user);
 		if (!user) {
 			ctx.status = 401
 			ctx.body = { message: "Kullanıcı bulunamadı " }
